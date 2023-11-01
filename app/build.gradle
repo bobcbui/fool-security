@@ -52,3 +52,12 @@ publishing {
     }
   }
 }
+
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: "$HOME/.m2/repository")
+        }
+    }
+}
