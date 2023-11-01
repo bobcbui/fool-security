@@ -5,6 +5,7 @@ plugins {
 }
 
 group = 'com.ooqn.app'
+
 version = '1.0.0'
 
 repositories {
@@ -33,6 +34,16 @@ tasks.named('test') {
 }
 
 publishing {
+  publications {
+        maven(MavenPublication) {
+            groupId = 'com.ooqn'
+            artifactId = 'fool-security'
+            version = '1.0'
+
+            from components.java
+        }
+    }
+
   repositories {
     maven {
       name = "OSSRH"
@@ -43,12 +54,4 @@ publishing {
       }
     }
   }
-}
-
-uploadArchives {
-    repositories {
-        mavenDeployer {
-            repository(url: "file://${System.properties['user.home']}/.m2/repository")
-        }
-    }
 }
