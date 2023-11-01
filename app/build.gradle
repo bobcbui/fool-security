@@ -14,7 +14,9 @@ plugins {
 
 repositories {
     // Use Maven Central for resolving dependencies.
+    maven { url 'https://jitpack.io' }
     mavenCentral()
+    
 }
 
 dependencies {
@@ -23,6 +25,7 @@ dependencies {
 
     // This dependency is used by the application.
     implementation 'com.google.guava:guava:31.1-jre'
+    implementation 'com.github.bobcbui:fool-security:Tag'
 }
 
 application {
@@ -34,7 +37,6 @@ tasks.named('test') {
     // Use JUnit Platform for unit tests.
     useJUnitPlatform()
 }
-
 
 publishing {
   repositories {
