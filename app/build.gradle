@@ -1,10 +1,9 @@
 plugins {
     id 'application'
     id 'maven-publish'
-    id 'java'
 }
 
-group = 'com.ooqn.app'
+group = 'com.ooqn'
 
 version = '1.0.0'
 
@@ -34,16 +33,6 @@ tasks.named('test') {
 }
 
 publishing {
-  publications {
-        maven(MavenPublication) {
-            groupId = 'com.ooqn'
-            artifactId = 'fool-security'
-            version = '1.0'
-
-            from components.java
-        }
-    }
-
   repositories {
     maven {
       name = "OSSRH"
