@@ -10,6 +10,8 @@ plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
     id 'application'
     id 'maven-publish'
+    id 'java'
+    id 'maven'
 }
 
 group = 'com.ooqn.app'
@@ -53,11 +55,10 @@ publishing {
   }
 }
 
-
 uploadArchives {
     repositories {
         mavenDeployer {
-            repository(url: "$HOME/.m2/repository")
+            repository(url: "file://${System.properties['user.home']}/.m2/repository")
         }
     }
 }
